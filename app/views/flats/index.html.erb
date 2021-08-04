@@ -1,6 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Flats</h1>
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>Flats</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @flats.count %> flats out of our <%= Flat.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Flat.count %> flats.</p>
+      <% end %>
+    </div>
+  </div>
+
+
 
 <table>
   <thead>
@@ -14,8 +31,11 @@
     </tr>
   </thead>
 
+ <div class="row">
   <tbody>
     <% @flats.each do |flat| %>
+     <div class="col-4">
+      <div class="flat-card">
       <tr>
         <td><%= flat.name %></td>
         <td><%= flat.address %></td>
@@ -26,6 +46,8 @@
         <td><%= link_to 'Edit', edit_flat_path(flat) %></td>
         <td><%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      </div>
+     </div>
     <% end %>
   </tbody>
 </table>
