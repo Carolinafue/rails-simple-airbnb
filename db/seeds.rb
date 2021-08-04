@@ -15,5 +15,6 @@ Flat.destroy_all
     address: Faker::Address.street_address,
     description: Faker::Lorem.word,
     price_per_night: Faker::Number.decimal(l_digits: 3, r_digits: 3),
-    number_of_guests: Faker::Number.decimal_part(digits: 2))
+    number_of_guests: Faker::Number.decimal_part(digits: 2)
+    picture_url: Faker::LoremFlickr.image(size: "50x60"))
 end

@@ -1,3 +1,4 @@
+<div class="map" style="background-image: url('<%= @flat.picture_url %>')"></div>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,10 +11,15 @@
   <%= @flat.address %>
 </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @flat.description %>
-</p>
+
+ <div class="flat-show-card">
+        <h3>descripcion...</h3>
+        <p><%= @flat.description %></p>
+        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=<%= @flat.address %>&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C<%= @flat.address %>&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+      </div>
+    </div>
+
+
 
 <p>
   <strong>Price per night:</strong>
